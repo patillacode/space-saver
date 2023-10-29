@@ -33,3 +33,5 @@ cover/
 .cache/
 .pytest_cache/
 *.log
+.vscode/
+todo.md

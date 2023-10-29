@@ -6,19 +6,25 @@ This project includes a script (`space_saver.py`) that converts video files to t
 
 1. Clone this repository.
 2. Navigate to the project directory.
-3. Run `make setup` to set up the project.
+3. Run `make install` to set up the project.
 
 ## Usage
 
-Run `make run` to execute the script.
+```bash
+usage: space_saver.py [-h] -p PATH -f FORMAT [-d] [-q] [-c CRF]
 
-You can also run the script directly with `python space_saver.py -p <path> -f <format> [-d] [-q] [-c <crf>]`, where:
+Convert files to .mp4 with H.265 codec
 
-- `<path>` is the path to the directory containing the files to convert.
-- `<format>` is the file format to convert.
-- `-d` is an optional flag for a dry run without actually converting files.
-- `-q` is an optional flag to keep the ffmpeg output to a minimum while converting.
-- `<crf>` is an optional argument to set the Constant Rate Factor (CRF) value for the ffmpeg command (default is 23).
+options:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  Path to the directory containing the .\{format\} files to convert
+                        into .mp4 files with H.265 codec
+  -f FORMAT, --format FORMAT
+                        File formats to convert, if not given all files will be checked
+  -d, --dry-run         Perform a dry run without actually converting files
+  -q, --quiet           Keep the ffmpeg output to a minimum while converting
+  -c CRF, --crf CRF     Set the Constant Rate Factor (CRF) value for the ffmpeg command
+```
 
 ## Project Structure
 
