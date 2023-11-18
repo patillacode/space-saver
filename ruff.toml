@@ -34,7 +34,6 @@ known-third-party = []
 section-order = [
     "future",
     "standard-library",
-    "django",
     "third-party",
     "first-party",
     "local-folder",
@@ -43,5 +42,3 @@ combine-as-imports = true
 split-on-trailing-comma = false
 lines-between-types = 1
 
-# [isort.sections]
-# "django" = ["django"]

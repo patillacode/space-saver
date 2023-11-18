@@ -1,12 +1,8 @@
 # Makefile for space_saver.py
 
-# Variables
 VENV_NAME?=venv
 PYTHON=${VENV_NAME}/bin/python3
 
-# Targets
-
-.PHONY: help setup run clean install test lint format docs
 
 help:
 	@echo "make clean"
@@ -16,7 +12,7 @@ help:
 
 clean:
 	rm -rf $(VENV_NAME)
-	find -iname "*.pyc" -delete
+	find . -name "*.pyc" -delete
 
 install:
 	python3 -m venv $(VENV_NAME)

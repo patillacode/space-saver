@@ -1,6 +1,13 @@
 # Space Saver
 
-This project includes a script (`space_saver.py`) that converts video files to the H.265 codec, which provides more efficient encoding and results in smaller file sizes.
+`space_saver.py` converts video files to .mp4 format with H.265 codec.
+It walks through a directory and its subdirectories looking for files with a given
+extension (or all files if no extension is given), and converts them to .mp4 with
+H.265 codec.
+
+The original file is deleted if the conversion is successful,
+and the new file is given permissions of 755.
+The script also calculates the space saved by the conversion and prints it at the end.
 
 ## Setup
 
