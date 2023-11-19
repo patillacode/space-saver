@@ -87,7 +87,7 @@ def check_video_stream(input_file_path):
 
         return True
 
-    except ffmpeg.Error as err:
+    except (ffmpeg.Error, ffmpeg._run.Error) as err:
         logger.error(
             f"Error occurred while checking video stream of {input_file_path}: {err}"
         )

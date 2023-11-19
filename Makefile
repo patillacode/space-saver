@@ -9,6 +9,8 @@ help:
 	@echo "       remove python artifacts and virtualenv"
 	@echo "make install"
 	@echo "       install the project dependencies"
+	@echo "make test"
+	@echo "       run tests"
 
 clean:
 	rm -rf $(VENV_NAME)
@@ -17,4 +19,7 @@ clean:
 install:
 	python3 -m venv $(VENV_NAME)
 	${PYTHON} -m pip install -r requirements.txt
+
+test:
+	${PYTHON} -m pytest
 
