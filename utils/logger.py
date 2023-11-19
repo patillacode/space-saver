@@ -2,7 +2,9 @@ import logging
 
 
 def configure_logger(log_level):
-    numeric_level = getattr(logging, log_level.upper(), None)
+    if numeric_level := getattr(logging, log_level.upper(), None) is None:
+        raise ValueError(f"Invalid log level: {log_level}")
+
     if not isinstance(numeric_level, int):
         raise ValueError(f"Invalid log level: {log_level}")
     logging.basicConfig(
