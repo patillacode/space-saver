@@ -25,10 +25,7 @@ def parse_arguments():
         "-p",
         "--path",
         required=True,
-        help=(
-            "Path to the directory containing the files to convert into "
-            ".mp4 files with H.265 codec"
-        ),
+        help=("Path to the directory containing the files to convert"),
     )
     parser.add_argument(
         "-e",
@@ -44,7 +41,10 @@ def parse_arguments():
         "--crf",
         type=int,
         default=23,
-        help="Constant Rate Factor for the H.265 codec, scale is 0-51 (default: 23)",
+        help=(
+            r"Constant Rate Factor for the H.265 codec, "
+            "scale is 0-51 (default: %(default)s)"
+        ),
     )
     parser.add_argument(
         "-d",
@@ -63,7 +63,7 @@ def parse_arguments():
         "--log",
         default="INFO",
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
-        help="Set the logging level",
+        help=r"Set the logging level (default: %(default)s))",
     )
     return parser.parse_args()
 
