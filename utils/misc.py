@@ -45,10 +45,15 @@ def after_conversion_clean_up(
             os.remove(output_file_path)
             logger.warning(
                 "The converted file is larger than the original file, "
-                "keeping the original file"
+                "keeping the original file, removing the converted file"
             )
             return 0
 
+        logger.warning(
+            "The original file is larger than the converted file, "
+            "keeping the converted file, removing the original file"
+        )
+        os.remove(output_file_path)
         os.chmod(output_file_path, 0o755)
         space_saved = original_size - new_size
         print_file_sizes(original_size, new_size)
