@@ -18,11 +18,9 @@ def convert_size(size_bytes):
 
 def print_file_sizes(original_size, new_size):
     size_reduction = ((original_size - new_size) / original_size) * 100
-    logger.info(
-        f"Original file size: {convert_size(original_size)}\n"
-        f"New mp4 file size: {convert_size(new_size)}\n"
-        f"Size reduction: {int(size_reduction)}%"
-    )
+    logger.info(f"Original file size: {convert_size(original_size)}")
+    logger.info(f"New mp4 file size: {convert_size(new_size)}")
+    logger.info(f"Size reduction: {int(size_reduction)}%")
 
 
 def check_file_type(file, extensions):
