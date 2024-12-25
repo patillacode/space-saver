@@ -45,3 +45,19 @@ options:
         python space_saver.py -p /home/user/videos -q -l DEBUG
 ```
 
+Some interesting ffmpeg commands for future reference:
+
+```bash
+Convert 4k to 1080 (no change in codec)
+
+- ffmpeg -i input4kvid.mp4 -vf scale=1920:1080 -c:a copy output1080vid.mp4
+
+Convert h.264 to h.265 (no change in resolution)
+
+- ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -c:a copy output.mp4
+
+Convert 4k(h.264) to 1080(h.265) Downscaling + Change in compression codec
+
+- ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 -vf scale=1920:1080 -crf 20 -c:a copy output.mp4
+
+```
